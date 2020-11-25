@@ -6,8 +6,6 @@
 | --------------------- | ------ | -------------------------- |
 | nickname              | string | null: false                |
 | email                 | string | null: false , unique: true |
-| password              | string | null: false                |
-| password_confirmation | string | null: false                |
 | encrypted_password    | string | null: false                |
 | last_name             | string | null: false                |
 | first_name            | string | null: false                |
@@ -28,14 +26,14 @@
 | category_id            | integer    | null: false                    |
 | item_condition_id      | integer    | null: false                    |
 | delivery_fee_burden_id | integer    | null: false                    |
-| shipping_area_id       | integer    | null: false                    |
+| prefecture_id          | integer    | null: false                    |
 | days_to_ship_id        | integer    | null: false                    |
 | price                  | integer    | null: false                    |
 | user                   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- has_one :buys
+- has_one :buy
 
 ## buys テーブル
 
@@ -54,7 +52,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | post_code_id   | string     | null: false                    |
-| prefectures_id | string     | null: false                    |
+| prefecture_id | string     | null: false                    |
 | municipality   | string     | null: false                    |
 | address        | string     | null: false                    |
 | building_name  | string     |                                |
