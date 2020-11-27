@@ -47,7 +47,7 @@
 - belongs_to :item
 - has_one :shopping_address
 
-## shopping_addresss テーブル
+## shopping_addresses テーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
