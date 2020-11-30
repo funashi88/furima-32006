@@ -28,7 +28,7 @@
       <% if current_user.id == @item.user_id %>
         <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
-        <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+        <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
       <%# <% elsif '商品が出品中かどうか' 購入機能実装後も差し替え %>
       <% else %>
         <%# 商品が売れていない場合はこちらを表示しましょう %>
