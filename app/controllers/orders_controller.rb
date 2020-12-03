@@ -25,9 +25,11 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    return redirect_to root_path unless user_signed_in?
-
-    root_path if current_user.id == @item.user_id
+    @orders = Order.pluck(:item_id)
+    authenticate_user!
+    if current_user.id == @item.user_id || @orders.include?(@item.id)
+      redirect_to root_path
+    end
   end
 
   def set_item
